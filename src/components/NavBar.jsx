@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function NavBar({ pokemonIndex, onPrevClick, onNextClick, pokemonList }) {
   return (
     <nav>
@@ -10,5 +12,17 @@ function NavBar({ pokemonIndex, onPrevClick, onNextClick, pokemonList }) {
     </nav>
   );
 }
+
+NavBar.propTypes = {
+    pokemonIndex: PropTypes.number.isRequired,
+    onPrevClick : PropTypes.func.isRequired,
+    onNextClick : PropTypes.func.isRequired,
+    pokemonList : PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            imgSrc: PropTypes.string,
+          })
+        ).isRequired,
+};
 
 export default NavBar;
