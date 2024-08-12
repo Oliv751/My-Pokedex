@@ -1,13 +1,13 @@
-function NavBar({ pokemonIndex, onPrevClick, onNextClick, pokemonListLength }) {
+function NavBar({ pokemonIndex, onPrevClick, onNextClick, pokemonList }) {
   return (
-    <div className="navbar">
+    <nav>
       {pokemonIndex > 0 && (
         <button onClick={onPrevClick}>Précédent</button>
       )}
-      {pokemonIndex < pokemonListLength - 1 && (
+      {pokemonIndex < pokemonList.length - 1 && (
         <button onClick={onNextClick}>Suivant</button>
       )}
-    </div>
+    </nav>
   );
 }
 
